@@ -1,0 +1,22 @@
+body {background-color: #a3b4c1;}
+h1   {color: #665080;}
+p    {color: #665080;font-size: 30px;font-style: oblique;}
+
+/* .konyaka img {
+    width: 50%;
+    float: left;
+} */
+
+.konyaka-1 {
+    width: 800px;
+}
+
+.konyaka-2 {
+    width: 800px;
+}
+
+@media only screen and (max-width: 800px) {
+    .konyaka img {
+        width: 100%;
+    }
+}
