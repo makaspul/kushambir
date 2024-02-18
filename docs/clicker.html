@@ -1,0 +1,56 @@
+<style>
+    body { 
+      background-color: rgb(186, 180, 209); 
+      font-size: 30px;
+      text-align: center;
+    }
+    #button {
+      width: 200px;
+      height: 200px;
+      background-color: rgb(228, 127, 218);
+      border-radius: 100px;
+      margin: 0 auto;
+      line-height: 200px;
+      user-select: none;
+      margin-top: 100px;
+    }
+    #score {
+      margin-top: 50px;
+      font-size: 60px;
+      font-weight: bold;
+      color: rgb(134, 81, 192);
+    }
+  </style>
+  
+  <div id="score">0</div>
+  <div id="button">CLICK ME</div>
+  
+  <script>
+    let counter = 0;
+    let clickMultiplier = 1;
+    let upgradeGoal = 20;
+  
+    document.getElementById('button').onclick = () => {
+      counter += clickMultiplier;
+      document.getElementById('score').innerText = counter;
+  
+      // Перевірка, чи досягнуто мети для отримання покращення
+      if (counter >= upgradeGoal) {
+        // Збільшення кількості очок за клік та оновлення мети
+        clickMultiplier += 1;
+        upgradeGoal += 20;
+        document.getElementById('score').innerText = counter;
+        document.getElementById('button').innerText = `CLICK ME (${clickMultiplier} per click, ${upgradeGoal} for next upgrade)`;
+      }
+  
+      // Перевірка, чи досягнуто нової мети
+      if (counter >= upgradeGoal) {
+        // Додайте код для обробки досягнення нової мети тут
+        alert(`Congratulations! You reached ${upgradeGoal} clicks!`);
+      }
+    };
+  </script>
+  
+  
+  
+  
