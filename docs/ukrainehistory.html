@@ -2,5 +2,23 @@
 <html prefix="og: http://ogp.me/ns#">
 <body style="background-color:powderblue;">    
 <head>
-
-    <a href="index.html">    <img src="img/лютий зроз.gif" alt=""></a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restricted Page</title>
+    <script>
+        function checkPassword() {
+            const password = prompt("Enter the password:");
+            if (password === "Solomiyka") {
+                alert("Access granted!");
+            } else {
+                alert("Access denied!");
+                window.location.href = "index.html"; // Redirect to another page
+            }
+        }
+    </script>
+</head>
+<body onload="checkPassword()">
+    <h1>Welcome to the restricted page!</h1>
+    <p>This page is protected by a simple password.</p>
+</body>
+</html>
