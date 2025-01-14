@@ -7,18 +7,68 @@
     <title>Restricted Page</title>
     <script>
         function checkPassword() {
-            const password = prompt("Enter the password:");
-            if (password === "Solomiyka") {
+            // Define the correct password
+            const correctPassword = "Solomiyka";
+            const NMT = "12345";
+
+            // Get the password entered by the user
+            const userPassword = document.getElementById("password").value;
+
+            // Check if the password matches
+            if (userPassword === correctPassword) {
                 alert("Access granted!");
+                // Redirect to the restricted content or load it dynamically
+                window.location.href = "tiktok.html"; // Replace with your restricted page
+            } else if (userPassword === NMT) {
+                alert("Access granted!");
+                window.location.href = "idk.html";
             } else {
-                alert("Access denied!");
-                window.location.href = "index.html"; // Redirect to another page
+                alert("Access denied! Incorrect password.");
+                // Optionally clear the input
+                document.getElementById("password").value = "";
             }
         }
     </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .password-box {
+            margin: auto;
+            width: 350px;
+            padding: 60px;
+            border: 10px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            font-size: 1rem;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #0078D7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
 </head>
-<body onload="checkPassword()">
-    <h1>Welcome to the restricted page!</h1>
-    <p>This page is protected by a simple password.</p>
+<body>
+    <h1>Restricted Page</h1>
+    <p>Please enter the password to access this page:</p>
+    <div class="password-box">
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
 </body>
 </html>
