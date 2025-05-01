@@ -3,7 +3,6 @@ h1   {color: #201019;}
 p    {color: #201019;font-size: 30px;font-style: oblique;}
 p style="font-family: Fira Sans Extra Condensed"
 h1 style="font-family: Fira Sans Extra Condensed"
-
 /* .konyaka img {
     width: 50%;
     float: left;
@@ -22,3 +21,18 @@ h1 style="font-family: Fira Sans Extra Condensed"
         width: 100%;
     }
 }
+button {
+    margin: 10px;
+    padding: 20px 40px;
+    font-size: 20px;
+    background-color: #244085;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #3b5ca0;
+  }

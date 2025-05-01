@@ -22,6 +22,38 @@
 </head>
 <body>
 <body style="background-color:powderblue;">
+    <h2>Choose your cursor style:</h2>
+    <h3>(Only for PC)</h3>
+    <button onclick="setCursor('textFlag')",>Text Flag</button>
+    <button onclick="setCursor('emojiCursor')">Emoji Cursor</button>
+    <button onclick="setCursor('default')">Default Cursor</button>
+  
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+    <script type="module">
+      import { textFlag, emojiCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+  
+      let activeEffect = null;
+  
+      function removeCurrentEffect() {
+        if (activeEffect && activeEffect.destroy) {
+          activeEffect.destroy(); // Some cursor-effects provide this method
+        }
+        document.querySelectorAll('.cursor-effects-layer').forEach(el => el.remove()); // Clean up
+      }
+  
+      window.setCursor = function(type) {
+        removeCurrentEffect();
+  
+        if (type === 'textFlag') {
+          activeEffect = new textFlag({ text: "Solomiyka", color: ["#244085"] });
+        } else if (type === 'emojiCursor') {
+          activeEffect = new emojiCursor({ emoji: ["😘","👣"] });
+        } else {
+          activeEffect = null;
+          document.body.style.cursor = 'default';
+        }
+      };
+    </script>
 <div class="konyaka">
     <h1 style="font-family:HYWenHei-85w;">Kushambir</h1>
     <h1 style="font-family:HYWenHei-85w;">Kremenchuck is the best city in the whole world!</h1>
